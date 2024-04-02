@@ -7,7 +7,8 @@ its runtime (`read`). Code supplied in both the `Catalog` and `JavaScript` field
 `async` function; the `JavaScript` script is provided helper functions for sending spec-compliant
 messages.
 
-> [!TIP] When saving the source in an Airbyte cloud environment, the web application firewall (WAF)
+> [!TIP]
+> When saving the source in an Airbyte cloud environment, the web application firewall (WAF)
 > can detect certain patterns in the code and block the request. If you encounter this issue, change
 > the code slightly and try again. If the issue persists, both fields also support base64 encoded
 > content which makes the process less great but keeps the functionality. You can use
@@ -29,7 +30,7 @@ The following are available to your code in the `JavaScript` field.
 | method               | syntax                                               | description                                                                                                   |
 | -------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | getConfiguredStreams | `getConfiguredStreams()`                             | returns an array of `{ stream, syncMode, state? }` objects representing each configured stream                |
-| getStreamConfig      | `getStreamConfig({ name, namespace? })               | returns `{ syncMode, state? }` with the catalog-defined sync mode for the stream and a starting state, if any |
+| getStreamConfig      | `getStreamConfig({ name, namespace? })`              | returns `{ syncMode, state? }` with the catalog-defined sync mode for the stream and a starting state, if any |
 | emitRecord           | `emitRecord({ name, namespace? }, data)`             | emits a record containing `data` for the stream described by `name` and optionally `namespace`                |
 | wait                 | `await wait(ms)`                                     | waits for `ms` milliseconds before continuing                                                                 |
 | log                  | `log(msg)`                                           | logs a message                                                                                                |

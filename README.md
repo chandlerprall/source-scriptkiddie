@@ -119,6 +119,13 @@ for (const { stream, syncMode, state } of getConfiguredStreams()) {
 emitGlobalState(globalState, streamStates);
 ```
 
+**config error**
+
+```javascript
+out({ type: "TRACE", trace: { type: "ERROR", emitted_at: Date.now(), error: { message: "oh noes", "failure_type": "config_error" } } });
+process.exit(1)
+```
+
 ## Development
 
 ### Prerequisites
